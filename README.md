@@ -1,2 +1,2 @@
-# Archives
+# Pages
 Github Pages
