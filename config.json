@@ -1,0 +1,175 @@
+{
+    "editorOptions": {
+        "automaticLayout": true,
+        "cursorStyle": "block-outline",
+        "fontFamily": "Sarasa Fixed SC",
+        "fontSize": 15,
+        "fontWeight": "400"
+    },
+    "languageConfiguration": {
+        "comments": {
+            "lineComment": "//"
+        }
+    },
+    "tokensProvider": {
+        "defaultToken": "invalid",
+        "blockAction": [
+            "Destroy",
+            "Place"
+        ],
+        "containerAction": [
+            "Chest",
+            "Furnace"
+        ],
+        "useAction": [
+            "Event"
+        ],
+        "chatAction": [
+            "Chat",
+            "CMD"
+        ],
+        "playerAction": [
+            "DeathInfo",
+            "Dimension",
+            "Join",
+            "Left"
+        ],
+        "tokenizer": {
+            "root": [
+                {
+                    "include": "@whitespace"
+                },
+                [
+                    "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}",
+                    "time"
+                ],
+                [
+                    "((\"[\\S ]{0,}\")|([^,])){0,}$",
+                    "target"
+                ],
+                [
+                    "[a-zA-Z_$][\\w$]*",
+                    {
+                        "cases": {
+                            "@blockAction": {
+                                "token": "blockAction"
+                            },
+                            "@containerAction": {
+                                "token": "containerAction"
+                            },
+                            "@useAction": {
+                                "token": "useAction"
+                            },
+                            "@chatAction": {
+                                "token": "chatAction"
+                            },
+                            "@playerAction": {
+                                "token": "playerAction"
+                            }
+                        }
+                    }
+                ]
+            ],
+            "whitespace": [
+                [
+                    "[ \\t\\r\\n]+",
+                    ""
+                ],
+                [
+                    "^\\/\\/.*$",
+                    "comment"
+                ]
+            ]
+        }
+    },
+    "theme": {
+        "base": "vs-dark",
+        "inherit": true,
+        "rules": [
+            {
+                "token": "time",
+                "foreground": "#5C6370"
+            },
+            {
+                "token": "blockAction",
+                "foreground": "#62b0f0"
+            },
+            {
+                "token": "containerAction",
+                "foreground": "#c679de"
+            },
+            {
+                "token": "useAction",
+                "foreground": "#d29a66"
+            },
+            {
+                "token": "chatAction",
+                "foreground": "#e06c76"
+            },
+            {
+                "token": "playerAction",
+                "foreground": "#57b6c3"
+            },
+            {
+                "token": "target",
+                "foreground": "#98C379"
+            },
+            {
+                "token": "comment",
+                "foreground": "#5C6370"
+            }
+        ],
+        "colors": {
+            "button.background": "#4D78CC",
+            "button.foreground": "#FFFFFF",
+            "button.hoverBackground": "#6087CF",
+            "dropdown.background": "#353b45",
+            "dropdown.border": "#181A1F",
+            "editorIndentGuide.activeBackground": "#626772",
+            "editor.background": "#282C34",
+            "editor.foreground": "#ABB2BF",
+            "editor.lineHighlightBackground": "#99BBFF0A",
+            "editor.selectionBackground": "#3E4451",
+            "editorCursor.foreground": "#00ff00",
+            "editor.findMatchHighlightBackground": "#528BFF3D",
+            "editorIndentGuide.background": "#ABB2BF26",
+            "editorLineNumber.foreground": "#636D83",
+            "editorLineNumber.activeForeground": "#ABB2BF",
+            "editorWhitespace.foreground": "#ABB2BF26",
+            "editorRuler.foreground": "#ABB2BF26",
+            "editorWidget.background": "#21252B",
+            "editorWidget.border": "#3A3F4B",
+            "input.background": "#1B1D23",
+            "input.border": "#181A1F",
+            "focusBorder": "#528BFF",
+            "list.activeSelectionBackground": "#2C313A",
+            "list.activeSelectionForeground": "#D7DAE0",
+            "list.focusBackground": "#2C313A",
+            "list.hoverBackground": "#2C313A66",
+            "list.highlightForeground": "#D7DAE0",
+            "list.inactiveSelectionBackground": "#2C313A",
+            "list.inactiveSelectionForeground": "#D7DAE0",
+            "notification.background": "#21252B",
+            "pickerGroup.border": "#528BFF",
+            "scrollbarSlider.background": "#4E566680",
+            "scrollbarSlider.activeBackground": "#747D9180",
+            "scrollbarSlider.hoverBackground": "#5A637580"
+        }
+    },
+    "customActions": [
+        {
+            "id": "behavior-log-viewer.trim",
+            "label": "Trim | 删除未标记条目",
+            "run": "trim();",
+            "contextMenuGroupId": "behavior-log-viewer.editing",
+            "contextMenuOrder": 1
+        },
+        {
+            "id": "behavior-log-viewer.trimSelected",
+            "label": "Trim Selected | 删除未标记条目(选中区域)",
+            "run": "trim(selected);",
+            "contextMenuGroupId": "behavior-log-viewer.editing",
+            "contextMenuOrder": 2
+        }
+    ]
+}
