@@ -167,7 +167,7 @@
         {
             "id": "behavior-log-viewer.trimSelected",
             "label": "Trim Selected",
-            "run": "trim({mode:\"selected\"});",
+            "run": "trim('selected');",
             "contextMenuGroupId": "behavior-log-viewer.editing",
             "contextMenuOrder": 2
         }
