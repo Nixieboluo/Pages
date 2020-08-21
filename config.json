@@ -158,18 +158,122 @@
     },
     "customActions": [
         {
+            "id": "editor.action.clipboardPasteAction",
+            "label": "Paste",
+            "run": "paste();",
+            "contextMenuGroupId": "9_cutcopypaste",
+            "contextMenuOrder": 3
+        },
+        {
+            "id": "behavior-log-viewer.comment",
+            "label": "Add Comment",
+            "run": "comment();",
+            "contextMenuGroupId": "action.comment",
+            "contextMenuOrder": 1,
+            "keybindings": [2130]
+        },
+        {
+            "id": "behavior-log-viewer.uncomment",
+            "label": "Uncomment",
+            "run": "uncomment();",
+            "contextMenuGroupId": "action.comment",
+            "contextMenuOrder": 2,
+            "keybindings": [2132]
+        },
+        {
             "id": "behavior-log-viewer.trim",
             "label": "Trim",
             "run": "trim({mode:\"\"});",
-            "contextMenuGroupId": "behavior-log-viewer.editing",
+            "contextMenuGroupId": "action.trim",
             "contextMenuOrder": 1
         },
         {
             "id": "behavior-log-viewer.trimSelected",
             "label": "Trim Selected",
             "run": "trim('selected');",
-            "contextMenuGroupId": "behavior-log-viewer.editing",
-            "contextMenuOrder": 2
+            "contextMenuGroupId": "action.trim",
+            "contextMenuOrder": 2,
+            "keybindings": [2136]
+        },
+        {
+            "id": "behavior-log-viewer.selTopDown",
+            "label": "Selection Top Down",
+            "run": "selTopDown();",
+            "contextMenuGroupId": "selection.toggle",
+            "contextMenuOrder": 1,
+            "keybindings": [2086]
+        },
+        {
+            "id": "behavior-log-viewer.selTopUp",
+            "label": "Selection Top Up",
+            "run": "selTopUp();",
+            "contextMenuGroupId": "selection.toggle",
+            "contextMenuOrder": 2,
+            "keybindings": [2088]
+        },
+        {
+            "id": "behavior-log-viewer.selBottomDown",
+            "label": "Selection Bottom Down",
+            "run": "selBottomDown();",
+            "contextMenuGroupId": "selection.toggle",
+            "contextMenuOrder": 3,
+            "keybindings": [2089]
+        },
+        {
+            "id": "behavior-log-viewer.selBottomUp",
+            "label": "Selection Bottom Up",
+            "run": "selBottomUp();",
+            "contextMenuGroupId": "selection.toggle",
+            "contextMenuOrder": 4,
+            "keybindings": [2090]
+        },
+        {
+            "id": "behavior-log-viewer.scrollUp",
+            "label": "Scroll Up",
+            "run": "scrollUp();",
+            "contextMenuGroupId": "view.scroll",
+            "contextMenuOrder": 1,
+            "keybindings": [528]
+        },
+        {
+            "id": "behavior-log-viewer.scrollDown",
+            "label": "Scroll Down",
+            "run": "scrollDown();",
+            "contextMenuGroupId": "view.scroll",
+            "contextMenuOrder": 2,
+            "keybindings": [530]
+        },
+        {
+            "id": "behavior-log-viewer.scrollReset",
+            "label": "Scroll Reset",
+            "run": "scrollReset();",
+            "contextMenuGroupId": "view.scroll",
+            "contextMenuOrder": 3,
+            "keybindings": [2062,526]
+        },
+        {
+            "id": "behavior-log-viewer.zoomIn",
+            "label": "Zoom In",
+            "run": "zoomIn();",
+            "contextMenuGroupId": "view.zoom",
+            "contextMenuOrder": 1,
+            "keybindings": [2129]
+        },
+        {
+            "id": "behavior-log-viewer.zoomOut",
+            "label": "Zoom Out",
+            "run": "zoomOut();",
+            "contextMenuGroupId": "view.zoom",
+            "contextMenuOrder": 2,
+            "keybindings": [2131]
+        },
+        {
+            "id": "behavior-log-viewer.zoomReset",
+            "label": "Zoom Reset",
+            "run": "zoomReset();",
+            "contextMenuGroupId": "view.zoom",
+            "contextMenuOrder": 3,
+            "keybindings": [2069]
         }
     ]
 }
